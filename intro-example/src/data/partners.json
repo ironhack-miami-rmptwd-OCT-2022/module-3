@@ -1,0 +1,8 @@
+[
+    {"company":"Chase Bank", "image":"chaseLogo.png", "blurb":"We have worked with chase bank many times over the years to consult on their cybersecurity and audit the strenght of their systems"},
+    {"company":"Cartoon Network", "image":"cnlogo.png", "blurb":"Cartoon Network has been a valued client of ours for over 9 years"},
+    {"company":"Publix", "image":"publixlogo.png", "blurb":"Publix Supermarkets rely on intuitive, up to date, secure software to run their inventories and they trust us to help them with that"},
+    {"company":"State Farm", "image":"statefarmlogo.png", "blurb":"State Farm uses computer obviously.  And we do computer.  Boom!"},
+    {"company":"Maple Hill Creamery", "image":"mhlogo.jpeg", "blurb":"Don't know why a dairy company needed our help, but we helped them"},
+    {"company":"Nascar", "image":"nascarlogo.png", "blurb":"nascar employees have no idea how to use a computer so we have consulted with them for year"}
+]
