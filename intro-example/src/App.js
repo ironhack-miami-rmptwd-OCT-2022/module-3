@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import MyNavbar from './components/Navbar';
+import Login from './components/login';
 import PartnerBox from './components/PartnerBox';
 import thePartners from "./data/partners.json";
 import { useState } from 'react';
@@ -8,9 +9,10 @@ import { useState } from 'react';
 
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
 
 
-  const [showPartners, setShowPartners] = useState(0);
+  const [showPartners, setShowPartners] = useState(true);
   // same as doing
   // const showPartners = false;
 
@@ -21,8 +23,8 @@ function App() {
   });
 
 
-  const togglePartners = async () => {
-    let blah = await setShowPartners(showPartners +1);
+  const togglePartners =  () => {
+    let blah = setShowPartners(!showPartners);
   }
   
   
@@ -32,10 +34,8 @@ function App() {
 
   return (
     <div className="App">
-      <MyNavbar/>
-      <div>
-        Number :{showPartners}
-        </div>
+      <MyNavbar loggedIn={loggedIn}/>
+ 
       <h1>Our Partners</h1>
       <h6 className="margin-bottom">Below are some of our trusted partners who we have worked with</h6>
 
@@ -44,11 +44,12 @@ function App() {
       </div>
 
 
-      {/* <div className='partner-box-container'>
+      <div className='partner-box-container'>
         {showPartners && arrayOfPartnerHTMLBoxes}
+        {!showPartners && <Login logInTheUser = {setLoggedIn} />}
         
       </div>
-  */}
+ 
 
     </div>
   );
