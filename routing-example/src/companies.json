@@ -1,0 +1,6 @@
+[
+    {"name": "Chase Bank", "image": "chaselogo.png", "blurb": "Chase bank is your trusted financial partner" },
+    {"name": "Nascar", "image": "nascarlogo.png", "blurb": "Nascar is the world's best drivers driving in circles what could be better" },
+    {"name": "Maple Hill", "image": "mhlogo.jpeg", "blurb": "its really good milk" },
+    {"name": "State Farm", "image": "statefarmlogo.png", "blurb": "like a good neighbor, state farm is there" }
+]
