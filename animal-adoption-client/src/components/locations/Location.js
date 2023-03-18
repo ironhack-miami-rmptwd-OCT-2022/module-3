@@ -14,7 +14,7 @@ export default function Location() {
 		return <ErrorMessage errorMessageToDisplay={errorMessage} />;
 	};
 
-	useEffect(() => {
+	const getLocations = () => {
 		axios
 			.get("http://localhost:5005/api/locations")
 			.then((resp) => {
@@ -33,6 +33,10 @@ export default function Location() {
 				setShowError(!err.success);
 				// displayErrorMessage(err.message);
 			});
+	};
+
+	useEffect(() => {
+		getLocations();
 	}, []);
 
 	const displayLocations = () => {
@@ -40,12 +44,14 @@ export default function Location() {
 			? locations.map((location) => {
 					console.log({ location });
 					return (
-						<Link
-							to={`/location/${location._id}`}
-							key={location._id}
-						>
-							{location.name}
-						</Link>
+						<div className="center-content">
+							<Link
+								to={`/location/${location._id}`}
+								key={location._id}
+							>
+								{location.name}
+							</Link>
+						</div>
 					);
 			  })
 			: "No Locations To Display At This Time";
@@ -59,7 +65,11 @@ export default function Location() {
 					{displayForm ? "Close Form" : "Show Form"}
 				</button>
 
-				{!displayForm ? "" : <LocationCreateForm />}
+				{!displayForm ? (
+					""
+				) : (
+					<LocationCreateForm getLocations={getLocations} />
+				)}
 			</div>
 		);
 	};

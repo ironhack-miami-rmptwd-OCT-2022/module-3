@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import axios from "axios";
 import ErrorMessage from "../ErrorMessage";
 
-export default function LocationCreateForm() {
+export default function LocationCreateForm({ getLocations }) {
 	const [formDetails, setFormDetails] = useState({
 		name: "",
 		street: "",
@@ -26,6 +26,7 @@ export default function LocationCreateForm() {
 			.post("http://localhost:5005/api/locations", formDetails)
 			.then((resp) => {
 				console.log({ createResp: resp.data });
+				getLocations();
 			})
 			.catch((err) => {
 				console.log({ err });
