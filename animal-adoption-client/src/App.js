@@ -6,6 +6,9 @@ import HomePage from "./components/Home";
 import Location from "./components/locations/Location";
 import LocationDetails from "./components/locations/LocationDetails";
 
+import { UserProvider } from "./contexts/UserContext";
+import Login from "./components/Login";
+
 function App() {
 	return (
 		<div className="App">
@@ -24,17 +27,20 @@ function App() {
         </a>
       </header> */}
 
-			<NavBar />
+			<UserProvider>
+				<NavBar />
 
-			<Routes>
-				<Route exact path="/" element={<HomePage />} />
-				<Route exact path="/locations" element={<Location />} />
-				<Route
-					exact
-					path="/location/:locationId"
-					element={<LocationDetails />}
-				/>
-			</Routes>
+				<Routes>
+					<Route exact path="/" element={<HomePage />} />
+					<Route exact path="/locations" element={<Location />} />
+					<Route
+						exact
+						path="/location/:locationId"
+						element={<LocationDetails />}
+					/>
+					<Route exact path="/login" element={<Login />} />
+				</Routes>
+			</UserProvider>
 		</div>
 	);
 }
